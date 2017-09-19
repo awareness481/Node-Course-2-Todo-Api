@@ -42,3 +42,24 @@ chTodo.save().then(doc => {
 }, (e) => {
   console.log('Unable to save todo');
 });
+
+// User mongoose model
+
+const User = mongoose.model('User', {
+  email: {
+    type: 'String',
+    required: true,
+    minlength: 1,
+    trim: true
+  }
+});
+
+const newUser = new User({
+  email: 'example@email.com'
+});
+
+newUser.save().then(doc => {
+  console.log('Saved user', doc);
+}, (e) => {
+  console.log('Unable to save user');
+});

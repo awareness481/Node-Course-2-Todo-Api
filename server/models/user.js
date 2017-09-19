@@ -10,5 +10,5 @@ const User = mongoose.model('User', {
 });
 
 module.exports = {
-  user
+  User
 };
